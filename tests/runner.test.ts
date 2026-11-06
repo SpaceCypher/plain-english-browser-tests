@@ -14,6 +14,11 @@ test("reject arbitrary code, invalid navigation, malformed actions; redact data"
     false,
   );
   assert.equal(Action.safeParse({ type: "click", target: -1 }).success, false);
+  assert.equal(
+    Action.safeParse({ type: "assert", kind: "visible", expected: "Dashboard" })
+      .success,
+    false,
+  );
   assert.ok(
     !redact({ password: "secret" }, { password: "secret" }).includes("secret"),
   );

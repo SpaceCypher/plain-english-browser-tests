@@ -20,7 +20,7 @@ These checks exercise the executor and reports; scripted-planner success is not 
 
 The published PHPTRAVELS demo credentials later became available. An independent scripted Playwright check signed in as the shared customer account and reached `/dashboard`, displaying Demo User and Dashboard. This verifies the credentials and site flow.
 
-Two attempts to run the full plain-English AI flow with those credentials were BLOCKED: Gemini 3 Flash Preview timed out, and Gemini 2.5 Flash returned HTTP 429. Neither run established an AI-driven dashboard pass. The results below describe the earlier registration attempts.
+The full plain-English AI flow subsequently passed with Gemini 3.1 Flash Lite: the runner dismissed the notice, entered the shared credentials, clicked Sign In, reached `/dashboard`, and verified visible text `Dashboard`. The sanitized action log is `phptravels-dashboard.json`. Earlier attempts encountered a timeout and HTTP 429; an initial run with this model reached the dashboard but exposed an omitted assertion target. The action schema now requires a target for element assertions. The results below describe the earlier registration attempts.
 
 ## PHPTRAVELS registration / dashboard boundary
 

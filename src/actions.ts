@@ -1,6 +1,6 @@
 import { z } from "zod";
 const target = { target: z.number().int().nonnegative() };
-export const Action = z.discriminatedUnion("type", [
+export const Action = z.union([
   z.object({ type: z.literal("click"), ...target }),
   z.object({ type: z.literal("fill"), ...target, value: z.string() }),
   z.object({ type: z.literal("select"), ...target, value: z.string() }),
@@ -20,8 +20,14 @@ export const Action = z.discriminatedUnion("type", [
   z.object({ type: z.literal("tab"), index: z.number().int().nonnegative() }),
   z.object({
     type: z.literal("assert"),
-    kind: z.enum(["visible", "text", "url", "value"]),
+    kind: z.literal("url"),
     target: z.number().int().nonnegative().optional(),
+    expected: z.string().min(1),
+  }),
+  z.object({
+    type: z.literal("assert"),
+    kind: z.enum(["visible", "text", "value"]),
+    ...target,
     expected: z.string().min(1),
   }),
   z.object({ type: z.literal("done") }),

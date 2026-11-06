@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "reason": "Requested assertions verified",
+  "assertions": 1,
+  "history": [
+    {
+      "event": "Page changed; replanning"
+    },
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "target": 74
+      },
+      "url": "https://phptravels.net/login"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "fill",
+        "target": 12,
+        "value": "{{customerEmail}}"
+      },
+      "url": "https://phptravels.net/login"
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "fill",
+        "target": 13,
+        "value": "{{customerPassword}}"
+      },
+      "url": "https://phptravels.net/login"
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "click",
+        "target": 16
+      },
+      "url": "https://phptravels.net/login"
+    },
+    {
+      "event": "Page changed; replanning"
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "assert",
+        "kind": "visible",
+        "target": 28,
+        "expected": "Dashboard"
+      },
+      "url": "https://phptravels.net/dashboard"
+    },
+    {
+      "assertion": "visible",
+      "expected": "Dashboard",
+      "actual": "Dashboard",
+      "verified": true
+    },
+    {
+      "step": 7,
+      "action": {
+        "type": "done"
+      },
+      "url": "https://phptravels.net/dashboard"
+    }
+  ]
+}
