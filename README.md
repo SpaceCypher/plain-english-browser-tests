@@ -61,6 +61,8 @@ node scripts/demo-server.mjs
 GEMINI_MODEL=gemini-3.8-flash npm start -- --url http://127.0.0.1:4173 --file examples/library.txt
 ```
 
+The full PHPTRAVELS customer login and dashboard assertion passed with `gemini-3.1-flash-lite`. The default `gemini-3.8-flash` passed local scripted tests, but its live PHPTRAVELS runs were blocked by HTTP 503 responses; a complete live run with 3.8 remains unverified. To select the verified model, set `GEMINI_MODEL=gemini-3.1-flash-lite`.
+
 Tests use actual Chrome and an explicitly scripted planner, independently of Gemini. They cover execution, incorrect assertions, missing data, limits and action validation. They do not prove model accuracy. [Verification notes](evidence/VERIFICATION.md) separately document real Gemini runs, including PHPTRAVELS. `examples/phptravels.txt` is test input, not runner logic.
 
 ## Approach and limitations
@@ -71,6 +73,6 @@ CAPTCHA, MFA, gated credentials, inaccessible or closed-shadow controls, file up
 
 ## Five-minute walkthrough
 
-[Watch/download the silent captioned recording](https://github.com/SpaceCypher/plain-english-browser-tests/releases/tag/v1.0.0). The recording distinguishes live Selenium execution, recorded real Gemini browser footage, and verification notes.
+[Watch/download the silent captioned recording](https://github.com/SpaceCypher/plain-english-browser-tests/releases/tag/v1.0.0). The recording distinguishes live Selenium execution, recorded real Gemini browser footage, and verification notes. It predates the successful PHPTRAVELS dashboard run.
 
 To reproduce the walkthrough locally, install the sibling C# project and run a successful `--video` case into `artifacts/library-gemini-3-live`, then run `DOTNET=/path/to/dotnet node scripts/record-walkthrough.mjs`. Chrome debugging port 9333 must be free. The script takes five minutes and writes a WebM under `artifacts/walkthrough`.
