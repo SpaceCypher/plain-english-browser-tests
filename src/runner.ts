@@ -91,7 +91,7 @@ Choose ONE JSON action: click(target), fill(target,value), select(target,value),
     let res: Response | undefined;
     for (let attempt = 0; attempt < 3; attempt++) {
       res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(process.env.GEMINI_MODEL || "gemini-2.5-flash")}:generateContent`,
+        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(process.env.GEMINI_MODEL || "gemini-3.8-flash")}:generateContent`,
         {
           method: "POST",
           headers: {
@@ -102,8 +102,7 @@ Choose ONE JSON action: click(target), fill(target,value), select(target,value),
             contents: [{ parts: [{ text: prompt }] }],
             generationConfig: {
               responseMimeType: "application/json",
-              temperature: 0,
-              responseJsonSchema: z.toJSONSchema(Action),
+                responseJsonSchema: z.toJSONSchema(Action),
             },
           }),
           signal: AbortSignal.timeout(30000),

@@ -10,7 +10,7 @@ Install Node.js 22+, Google Chrome, and obtain a [Gemini API key](https://ai.goo
 npm ci
 npm run build
 export GEMINI_API_KEY='your-key'
-export GEMINI_MODEL='gemini-2.5-flash' # configurable
+export GEMINI_MODEL='gemini-3.8-flash' # default; configurable
 npm start -- --url https://example.com --test 'Verify the page shows Example Domain'
 ```
 
@@ -58,7 +58,7 @@ Try the independent local catalogue example:
 ```sh
 node scripts/demo-server.mjs
 # In another terminal, with GEMINI_API_KEY set:
-GEMINI_MODEL=gemini-3-flash-preview npm start -- --url http://127.0.0.1:4173 --file examples/library.txt
+GEMINI_MODEL=gemini-3.8-flash npm start -- --url http://127.0.0.1:4173 --file examples/library.txt
 ```
 
 Tests use actual Chrome and an explicitly scripted planner, independently of Gemini. They cover execution, incorrect assertions, missing data, limits and action validation. They do not prove model accuracy. [Verification notes](evidence/VERIFICATION.md) separately document real Gemini runs, including PHPTRAVELS. `examples/phptravels.txt` is test input, not runner logic.

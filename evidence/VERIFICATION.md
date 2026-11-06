@@ -10,6 +10,10 @@ Environment: macOS ARM64, Node 22.22.3, Google Chrome 156. Model names are runti
 
 These checks exercise the executor and reports; scripted-planner success is not model success.
 
+## Gemini 3.8 Flash default
+
+After switching the default to `gemini-3.8-flash`, the build and scripted browser tests passed. Two live PHPTRAVELS runs were blocked by repeated Gemini HTTP 503 responses, before a verified assertion. A complete live dashboard pass with 3.8 Flash remains unverified. The 3.1 Flash Lite pass below remains valid for that model; set `GEMINI_MODEL=gemini-3.1-flash-lite` to select it explicitly.
+
 ## Actual Gemini and browser checks
 
 - PHPTRAVELS customer login page, Gemini 2.5 Flash: PASS. Browser assertions verified the Email Address and Password fields. `phptravels-fields.json` is the sanitized actual action log. This was not a dashboard login test.
