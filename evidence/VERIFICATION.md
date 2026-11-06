@@ -16,13 +16,19 @@ These checks exercise the executor and reports; scripted-planner success is not 
 - Independent Reading Room catalogue fixture, Gemini 3 Flash Preview: PASS. The English case requested Orbit search, Science Fiction selection, Available-only filtering, and verification of Orbit Atlas. The model chose fill, select, check, assert, done. See `library-gemini.json`.
 - Other attempts encountered HTTP 429, 503, unsupported-model 404 and a provider timeout. Those unsuccessful runs were not counted as passes. The final runner retries transient HTTP responses at most three times and reports provider errors as BLOCKED. Negative executor behavior was verified deterministically; a separate live-Gemini negative attempt hit rate limits and remains unverified.
 
+## Shared demo account follow-up
+
+The published PHPTRAVELS demo credentials later became available. An independent scripted Playwright check signed in as the shared customer account and reached `/dashboard`, displaying Demo User and Dashboard. This verifies the credentials and site flow.
+
+Two attempts to run the full plain-English AI flow with those credentials were BLOCKED: Gemini 3 Flash Preview timed out, and Gemini 2.5 Flash returned HTTP 429. Neither run established an AI-driven dashboard pass. The results below describe the earlier registration attempts.
+
 ## PHPTRAVELS registration / dashboard boundary
 
 Registration was explicitly authorized and used a unique reserved example.com email address, a generated password, and a fictional US phone number, rather than another person's contact information. A POST returned 302 to login, which displayed:
 
 > Registration successful! We are unable to send verification email. Please contact admin to activate your account.
 
-A subsequent real Gemini run dismissed the demo dialog, filled named credentials and clicked Sign In. The page displayed "Please verify your email address before logging in." The next model request timed out, so that run was unsuccessful and did not report a dashboard pass. See the inspected, input-masked `phptravels-activation.png`. Dashboard login remains BLOCKED by activation; it has not been verified. Credentials, traces and credential-bearing video are not published.
+A subsequent real Gemini run dismissed the demo dialog, filled named credentials and clicked Sign In. The page displayed "Please verify your email address before logging in." The next model request timed out, so that run was unsuccessful and did not report a dashboard pass. See the inspected, input-masked `phptravels-activation.png`. That individually registered account remained blocked by activation. The shared demo account was verified separately as described above. Credentials, traces and credential-bearing video are not published.
 
 The registration was repeated with a real receiving disposable inbox created through [Mail.tm](https://mail.tm). The site again returned the same verification-email failure and admin-activation message. The inbox API was reachable (HTTP 200) and contained zero messages. A temporary mailbox therefore did not resolve the site's outgoing-email failure. Mailbox credentials and tokens remain local.
 
