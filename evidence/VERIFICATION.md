@@ -24,6 +24,8 @@ Registration was explicitly authorized and used a unique reserved example.com em
 
 A subsequent real Gemini run dismissed the demo dialog, filled named credentials and clicked Sign In. The page displayed "Please verify your email address before logging in." The next model request timed out, so that run was unsuccessful and did not report a dashboard pass. See the inspected, input-masked `phptravels-activation.png`. Dashboard login remains BLOCKED by activation; it has not been verified. Credentials, traces and credential-bearing video are not published.
 
+The registration was repeated with a real receiving disposable inbox created through [Mail.tm](https://mail.tm). The site again returned the same verification-email failure and admin-activation message. The inbox API was reachable (HTTP 200) and contained zero messages. A temporary mailbox therefore did not resolve the site's outgoing-email failure. Mailbox credentials and tokens remain local.
+
 ## Recording
 
 The five-minute silent captioned recording shows live C#/Selenium execution, playback of actual Gemini browser footage at normal speed, and explanations of architecture, setup, evidence and limitations. It is edited for presentation; it is not a continuous five-minute end-to-end login test.
