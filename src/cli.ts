@@ -2,20 +2,20 @@ import { readFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
 import { redact } from "./actions.js";
 import { run } from "./runner.js";
-const { values: v } = parseArgs({
-  options: {
-    url: { type: "string" },
-    test: { type: "string" },
-    file: { type: "string" },
-    data: { type: "string" },
-    headed: { type: "boolean" },
-    video: { type: "boolean" },
-    steps: { type: "string" },
-    timeout: { type: "string" },
-    out: { type: "string" },
-  },
-});
 try {
+  const { values: v } = parseArgs({
+    options: {
+      url: { type: "string" },
+      test: { type: "string" },
+      file: { type: "string" },
+      data: { type: "string" },
+      headed: { type: "boolean" },
+      video: { type: "boolean" },
+      steps: { type: "string" },
+      timeout: { type: "string" },
+      out: { type: "string" },
+    },
+  });
   if (!v.url || (!v.test && !v.file))
     throw Error(
       'Usage: npm start -- --url URL --test "English test" [--data credentials.local.json] [--headed]',
