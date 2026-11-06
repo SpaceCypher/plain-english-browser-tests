@@ -1,0 +1,1 @@
+Log in as a customer using {{customerEmail}} and {{customerPassword}}. Verify the customer dashboard is shown. If the login page is unavailable, report blocked.

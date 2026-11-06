@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "reason": "Requested assertions verified",
+  "assertions": 2,
+  "history": [
+    {
+      "event": "Page changed; replanning"
+    },
+    {
+      "step": 1,
+      "action": {
+        "type": "assert",
+        "kind": "visible",
+        "target": 12,
+        "expected": "Email Address"
+      },
+      "url": "https://phptravels.net/login"
+    },
+    {
+      "assertion": "visible",
+      "expected": "Email Address",
+      "verified": true
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "assert",
+        "kind": "visible",
+        "target": 13,
+        "expected": "Password"
+      },
+      "url": "https://phptravels.net/login"
+    },
+    {
+      "assertion": "visible",
+      "expected": "Password",
+      "verified": true
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "done"
+      },
+      "url": "https://phptravels.net/login"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "reason": "Requested assertions verified",
+  "assertions": 1,
+  "history": [
+    {
+      "step": 0,
+      "action": {
+        "type": "fill",
+        "target": 2,
+        "value": "Orbit"
+      },
+      "url": "http://127.0.0.1:4173/"
+    },
+    {
+      "step": 1,
+      "action": {
+        "type": "select",
+        "target": 3,
+        "value": "Science Fiction"
+      },
+      "url": "http://127.0.0.1:4173/"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "check",
+        "target": 4,
+        "checked": true
+      },
+      "url": "http://127.0.0.1:4173/"
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "assert",
+        "kind": "text",
+        "target": 5,
+        "expected": "Orbit Atlas"
+      },
+      "url": "http://127.0.0.1:4173/"
+    },
+    {
+      "assertion": "text",
+      "expected": "Orbit Atlas",
+      "actual": "Orbit Atlas",
+      "verified": true
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:4173/"
+    }
+  ]
+}
